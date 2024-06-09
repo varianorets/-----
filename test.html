@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./test.css" />
+  </head>
+  <body>
+    <div class="todo">
+      <h2 class="todo__title">Todolist</h2>
+      <div class="todo__top">
+        <input class="todo__inp" type="text" />
+        <button class="todo__btn">Add</button>
+      </div>
+      <div class="todo__body"></div>
+      <div class="todo__info">
+        <p class="todo__text">
+          <span class="todo__complete"> 1 </span> of
+          <span class="todo__count">2 </span> task done
+        </p>
+        <button class="todo__clear">Clear all</button>
+      </div>
+    </div>
+    <template class="todo__template">
+      <div class="todo__item">
+        <div class="todo__left">
+          <div class="checkbox-wrapper-15">
+            <input
+              class="inp-cbx"
+              id="cbx-15"
+              type="checkbox"
+              style="display: none"
+            />
+            <label class="cbx" for="cbx-15">
+              <span>
+                <svg width="12px" height="9px" viewbox="0 0 12 9">
+                  <polyline points="1 5 4 8 11 1"></polyline>
+                </svg>
+              </span>
+              <span class="todo__name">To-do</span>
+            </label>
+          </div>
+        </div>
+        <div class="todo__right">
+          <button class="todo__delete">Delete</button>
+        </div>
+      </div>
+    </template>
+
+    <script src="./test.js"></script>
+  </body>
+</html>

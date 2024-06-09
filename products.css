@@ -1,0 +1,20 @@
+.product {
+  width: 300px;
+  text-align: center;
+}
+.img__product {
+  width: 250px;
+}
+.buy {
+  display: flex;
+  justify-content: space-between;
+}
+.buy__btn {
+  background-color: rgba(250, 189, 103, 0.469);
+  color: rgb(241, 121, 15);
+  width: 60px;
+  height: 25px;
+  font-size: 15px;
+  border: 1px solid rgb(241, 121, 15);
+  border-radius: 40px;
+}
