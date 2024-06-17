@@ -6,11 +6,12 @@ const todoCount = document.querySelector(".todo__count");
 const clearBtn = document.querySelector(".todo__clear");
 const template = document.querySelector(".todo__template");
 
-let todoArr = [];
+let todoArr = getInStorage();
 renderTodo(todoArr);
 
 function renderTodo(arr) {
   todoBody.innerHTML = "";
+  saveToStorage();
   arr.forEach(function (elem, index) {
     const clone = template.content.cloneNode(true);
     //запись для клонирования шаблона
@@ -27,6 +28,7 @@ function renderTodo(arr) {
     todoInput.onchange = function () {
       const checked = todoInput.checked;
       elem.complete = checked;
+      saveToStorage();
       getTodoInfo();
     };
     todoInput.id = index;
@@ -62,5 +64,17 @@ function clearTodo() {
   if (confirm("are you sure?")) {
     todoArr = [];
     renderTodo(todoArr);
+  }
+}
+//пример сохранения локального хранилища боаузера
+function saveToStorage() {
+  localStorage.setItem("arr", JSON.stringify(todoArr));
+}
+function getInStorage() {
+  let arr = localStorage.getItem("arr");
+  if (arr) {
+    return JSON.parse(arr);
+  } else {
+    return [];
   }
 }
